@@ -1,0 +1,105 @@
+<!-- Pastikan jQuery sudah ada -->
+<script>
+// ======= KONFIGURASI =======
+const PATTERNS_POOL = [
+  ',Turbo On,',
+  ',Turbo Off,',
+  'Pattern A,',
+  'Pattern B,',
+  'Pattern C,'
+];
+
+const NUMBERS_POOL = [10, 20, 50, 70, 100];
+const TEXTS_POOL   = ['Auto', 'Manual'];
+
+// Jumlah item progress bar yang ingin dihitung (sesuaikan dengan markup Anda)
+const PROGRESS_COUNT = 0x13f - 1; // sama seperti loop lama: i = 1 .. 0x13e (318)
+
+// Array x dari kode lama (dipertahankan utuh)
+const X = [
+  0x0,0x22c7,0x1462,0x383,0x8c3,0x43e,0x1336,0xd20,0xc95,0x16c7,0x618,0x22a,0xe71,0x1182,0x9ca,0x6d3,0x10cb,0x10f6,0x2529,0x14a7,0x118b,0x1dc5,0x947,0x576,0x2683,0x2468,0x6c5,0x1f3f,0x222d,0x1858,0xb46,0x16f8,0x1edd,0x18b1,0x16f,0xc45,0xa27,0xe21,0x1855,0x45b,0xf08,0x14d5,0x126b,0x1686,0xff1,0x9d0,0x12bd,0x1b18,0x1f08,0x24b0,0x1358,0xe02,0x13da,0x182e,0x14c1,0x1687,0x228f,0x1780,0x16bb,0x1b59,0xdda,0xe2e,0x18ea,0x1ab2,0xe81,0x1ad8,0x21d4,0x1496,0xa7f,0x1506,0xd3c,0x71c,0x1a4d,0x1553,0xcb2,0xaf0,0x1ca3,0x2203,0x2dc,0x36c,0x1cff,0x108,0x87,0x2094,0xd30,0x7d6,0x2222,0x190b,0x1b77,0x93d,0x1aa0,0x8e4,0x1c74,0x3a3,0x736,0x1e33,0x22cf,0x1611,0x14e8,0x2350,0xd08,0xfe0,0x2515,0x7f8,0x821,0x1484,0x1597,0x185d,0xa0f,0x40a,0xbbc,0x24e1,0xe1f,0x2681,0x10d7,0x1020,0x9f7,0x25a7,0x2170,0xd6e,0x1aa9,0x1980,0xb40,0x2048,0x258a,0x101e,0x4f5,0x260c,0x1ee0,0xa68,0x12ef,0x2310,0x2ae,0x21f6,0x1c53,0x2e2,0x8ba,0x16ce,0xfdf,0x830,0x951,0x170f,0x1337,0x7f4,0x1745,0x1111,0x626,0x208b,0x2616,0x23ab,0x21be,0x1d66,0x21ba,0x75a,0x115b,0x2212,0x2a5,0x342,0x5e5,0xbd2,0x1c28,0x20a0,0x19a1,0x636,0x1b09,0x24ac,0x2a2,0x1846,0x24e6,0x1164,0x1512,0x1981,0xee8,0x25c0,0x1149,0x1135,0x1669,0xb87,0x6f,0xe1a,0x7cb,0x19a7,0x20ee,0x2132,0x1957,0x1fb9,0x11f9,0x10d0,0x1ca9,0x3f7,0x71d,0x1c66,0x232a,0x193,0x125e,0x9f,0xd5,0x2cd,0xc7c,0x2068,0xab8
+];
+
+// ======= UTIL =======
+function sample(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function pickRandomPatterns(n = 3) {
+  // acak, ambil n unik
+  const copy = [...PATTERNS_POOL].sort(() => 0.5 - Math.random());
+  return copy.slice(0, n);
+}
+
+// ======= BAGIAN POLA (pola1, pola2, pola3) =======
+function updatePatterns() {
+  const chosen = pickRandomPatterns(3);
+  const val1 = `${sample(NUMBERS_POOL)} ${chosen[0]} ${sample(TEXTS_POOL)}`;
+  const val2 = `${sample(NUMBERS_POOL)} ${chosen[1]} ${sample(TEXTS_POOL)}`;
+  const val3 = `${sample(NUMBERS_POOL)} ${chosen[2]} ${sample(TEXTS_POOL)}`;
+
+  $('#pola1').html(val1);
+  $('#pola2').html(val2);
+  $('#pola3').html(val3);
+}
+
+// ======= BAGIAN PROGRESS BAR =======
+function updateProgressBars() {
+  for (let i = 1; i <= PROGRESS_COUNT; i++) {
+    const d = new Date();
+    let date  = d.getUTCDate();
+    let day   = d.getUTCDay() + 1;
+    let year  = d.getUTCFullYear();
+    let month = d.getUTCMonth() + 1;
+    let hour  = d.getUTCHours();
+    let min   = d.getMinutes();
+
+    // meniru logika lama: min < 30 ? 1 : 2
+    min = (min < 30) ? 1 : 2;
+
+    // rumus lama, dipertahankan
+    let xx = day + year * month * date;
+    xx = Math.pow(xx, hour * min);
+    xx = xx * (X[i] ?? 1);
+
+    if (i === 0) {
+      xx = (xx % 27) + 65;
+    } else {
+      xx = (xx % 83) + 8;
+    }
+
+    // clamp ke 0..100 biar aman ditampilkan
+    xx = Math.max(0, Math.min(100, Math.floor(xx)));
+
+    // Tulis nilai & lebar bar
+    $(`#percent-txt-${i}`).html(`${xx}%`);
+    const $bar = $(`#percent-bar-${i}`);
+    $bar.attr('aria-valuenow', xx).css('width', `${xx}%`);
+
+    // pewarnaan (meniru threshold lama: <30 merah, >70 hijau, else kuning)
+    $bar.removeClass('red shine yellow green'); // bersihkan dulu
+    if (xx < 30) {
+      $bar.addClass('red shine');
+    } else if (xx > 70) {
+      $bar.addClass('green shine');
+    } else {
+      $bar.addClass('yellow shine');
+    }
+  }
+}
+
+// ======= EVENT =======
+$(document).on('click', '.btn-game', function () {
+  updatePatterns();
+});
+
+$(document).on('show.bs.modal', '#modal-pola', function () {
+  updatePatterns();
+});
+
+// Jalankan saat DOM siap
+$(document).ready(function () {
+  updatePatterns();
+  updateProgressBars();
+});
+</script>
