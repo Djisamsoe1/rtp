@@ -1,1 +1,96 @@
-function _0x345c(_0x44ead3,_0x4f3fcb){const _0x57074a=_0x5707();return _0x345c=function(_0x345c77,_0x2e52a4){_0x345c77=_0x345c77-0x1e4;let _0x453d32=_0x57074a[_0x345c77];return _0x453d32;},_0x345c(_0x44ead3,_0x4f3fcb);}const _0x4dccb8=_0x345c;(function(_0xbc81cf,_0x5ed6d6){const _0x29411a=_0x345c,_0x30433e=_0xbc81cf();while(!![]){try{const _0x36b11a=-parseInt(_0x29411a(0x1ed))/0x1+parseInt(_0x29411a(0x207))/0x2*(parseInt(_0x29411a(0x212))/0x3)+parseInt(_0x29411a(0x1f4))/0x4+parseInt(_0x29411a(0x1fd))/0x5*(-parseInt(_0x29411a(0x1ec))/0x6)+parseInt(_0x29411a(0x206))/0x7+parseInt(_0x29411a(0x1e4))/0x8+parseInt(_0x29411a(0x1fb))/0x9*(-parseInt(_0x29411a(0x1f2))/0xa);if(_0x36b11a===_0x5ed6d6)break;else _0x30433e['push'](_0x30433e['shift']());}catch(_0x34b7c9){_0x30433e['push'](_0x30433e['shift']());}}}(_0x5707,0xe85b2));const ids=['BULLSEYE',_0x4dccb8(0x208),_0x4dccb8(0x202),_0x4dccb8(0x20c),_0x4dccb8(0x1f0),_0x4dccb8(0x204),'LOTTO\x20GENTING19',_0x4dccb8(0x205),_0x4dccb8(0x20f),'PCSO',_0x4dccb8(0x1f8),'Toto\x20Macau\x205D\x2021','LOTTO\x20GENTING22',_0x4dccb8(0x216),_0x4dccb8(0x201),_0x4dccb8(0x1ff),'Toto\x20Macau\x2023',_0x4dccb8(0x1e8),_0x4dccb8(0x1f7)];function getSeed(){const _0x35f371=_0x4dccb8,_0x30368c=new Date(),_0x1c0403=new Date(_0x30368c[_0x35f371(0x215)]()+0x7*0x3c*0x3c*0x3e8),_0x1fa250=_0x1c0403[_0x35f371(0x1fa)](),_0x1ba2a7=String(_0x1c0403[_0x35f371(0x1f5)]()+0x1)[_0x35f371(0x1f1)](0x2,'0'),_0x5e8c11=String(_0x1c0403[_0x35f371(0x20e)]())[_0x35f371(0x1f1)](0x2,'0');return _0x1fa250+'-'+_0x1ba2a7+'-'+_0x5e8c11;}function seededRandom(_0x34c53c){const _0x17804c=_0x4dccb8;let _0x6f64d3=0x0;for(let _0xf5538f=0x0;_0xf5538f<_0x34c53c[_0x17804c(0x200)];_0xf5538f++){_0x6f64d3=_0x34c53c[_0x17804c(0x1eb)](_0xf5538f)+((_0x6f64d3<<0x5)-_0x6f64d3);}return function(){return _0x6f64d3=(_0x6f64d3*0x2455+0xc091)%0x38f40,_0x6f64d3/0x38f40;};}function generateUniqueNumber(_0x4d4a2a){const _0x4e2b67=_0x4dccb8,_0x53ce52=[];while(_0x53ce52[_0x4e2b67(0x200)]<0x6){const _0x39f4a0=Math[_0x4e2b67(0x209)](_0x4d4a2a()*0xa);!_0x53ce52[_0x4e2b67(0x210)](_0x39f4a0)&&_0x53ce52['push'](_0x39f4a0);}return _0x53ce52[_0x4e2b67(0x1ee)]('');}function splitNumber(_0x1112bb){const _0x1472a3=_0x4dccb8,_0x13ecee=_0x1112bb['split'](''),_0xe7a060=_0x1112bb,_0x438f97=_0x13ecee[_0x1472a3(0x1e5)](0x1,0x5)[_0x1472a3(0x1ee)](''),_0x2bffdf=_0x13ecee[0x0]+'/'+_0x13ecee[0x5],_0x248e35=''+_0x13ecee[0x3]+_0x13ecee[0x3]+'\x20-\x20'+_0x13ecee[0x1]+_0x13ecee[0x1],_0x3c13e1=''+_0x13ecee[0x0]+_0x13ecee[0x5]+_0x1472a3(0x1fc)+_0x13ecee[0x2]+_0x13ecee[0x4]+'\x20-\x20'+_0x13ecee[0x4]+_0x13ecee[0x1];return{'bbfs':_0xe7a060,'ai':_0x438f97,'cb':_0x2bffdf,'twin':_0x248e35,'top2dBB':_0x3c13e1};}function displayDailyNumbers(){const _0x1f9c9e=_0x4dccb8,_0x8e67fb=getSeed(),_0x28a6d0=seededRandom(_0x8e67fb),_0x17ec43=document[_0x1f9c9e(0x1e6)]('dailyNumbers');ids[_0x1f9c9e(0x1fe)](_0x4993b6=>{const _0x131910=_0x1f9c9e,_0x2b5f0b=generateUniqueNumber(_0x28a6d0),{bbfs:_0x455ab5,ai:_0x46e8c6,cb:_0x519b21,twin:_0xeac170,top2dBB:_0x3ed1a3}=splitNumber(_0x2b5f0b),_0x54d739=document[_0x131910(0x1f3)](_0x131910(0x1e9));_0x54d739[_0x131910(0x211)]='card',_0x54d739[_0x131910(0x203)]=_0x131910(0x1f6)+_0x4993b6+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-text\x22><strong>BBFS:</strong>\x20'+_0x455ab5+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-text\x22><strong>AI:</strong>\x20'+_0x46e8c6+_0x131910(0x1f9)+_0x519b21+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-text\x22><strong>Twin:</strong>\x20'+_0xeac170+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-text\x22><strong>Top\x202D\x20BB:</strong>\x20'+_0x3ed1a3+_0x131910(0x1e7),_0x17ec43[_0x131910(0x214)](_0x54d739);});}displayDailyNumbers(),document[_0x4dccb8(0x217)](_0x4dccb8(0x213),function(){const _0x2ad092=_0x4dccb8,_0x16c8a5=_0x2ad092(0x1ea),_0x5b6f5a=document[_0x2ad092(0x20a)][_0x2ad092(0x203)];!_0x5b6f5a['includes'](_0x16c8a5)&&(window[_0x2ad092(0x20d)][_0x2ad092(0x20b)]=_0x2ad092(0x1ef));});function _0x5707(){const _0x212d62=['LOTTO\x20GENTING20','includes','className','6KYmXrA','DOMContentLoaded','appendChild','getTime','Toto\x20Macau\x2022','addEventListener','4621536utyaFM','slice','getElementById','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://www.daungo.space/\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20class=\x22btn\x20btn-outline-danger\x22>PASANG\x20SEKARANG</button></a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22footer\x22>PREDIKSI\x20TIDAK\x20100%\x20AKURAT,\x20UTAMAKAN\x20PREDIKSI\x20SENDIRI\x20🔥</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','LOTTO\x20GENTING24','div','charCodeAt','22818XyireC','161467mWCETO','join','https://www.theongersmovie.space','Toto\x20Macau16','padStart','61170xaKLmV','createElement','7218316rxESXf','getUTCMonth','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-title\x22>','Toto\x20Macau\x2000','LOTTO\x20GENTING21','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-text\x22><strong>CB:</strong>\x20','getUTCFullYear','4680xlSKIr','\x20-\x20','95rYmUcJ','forEach','HONGKONG\x20LOTTO','length','LOTTO\x20GENTING23','SYDNEY\x20LOTTO','innerHTML','SINGAPORE','Toto\x20Macau\x2019','9476509wGQBGW','630236WNiWlu','Toto\x20Macau13','floor','documentElement','href','Toto\x20Macau\x205D\x2015','location','getUTCDate'];_0x5707=function(){return _0x212d62;};return _0x5707();}
+const ids = [
+  "BULLSEYE",
+  "LOTTO GENTING20",
+  "SINGAPORE",
+  "Toto Macau 19",
+  "HONGKONG LOTTO",
+  "SYDNEY LOTTO",
+  "LOTTO GENTING19",
+  "Toto Macau 5D 15",
+  "Toto Macau16",
+  "PCSO",
+  "Toto Macau13",
+  "Toto Macau 5D 21",
+  "LOTTO GENTING22",
+  "Toto Macau 22",
+  "LOTTO GENTING21",
+  "LOTTO GENTING23",
+  "Toto Macau 23",
+  "Toto Macau 00",
+  "LOTTO GENTING24"
+];
+
+function getSeed() {
+  const now = new Date();
+  const future = new Date(now.getTime() + 7 * 60 * 60 * 1000);
+  const year = future.getUTCFullYear();
+  const month = String(future.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(future.getUTCDate()).padStart(2, "0");
+  return year + "-" + month + "-" + day;
+}
+
+function seededRandom(seed) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) {
+    h = seed.charCodeAt(i) + ((h << 5) - h);
+  }
+  return function () {
+    h = (h * 9301 + 49297) % 233280;
+    return h / 233280;
+  };
+}
+
+function generateUniqueNumber(rand) {
+  const nums = [];
+  while (nums.length < 6) {
+    const n = Math.floor(rand() * 10);
+    if (!nums.includes(n)) nums.push(n);
+  }
+  return nums.join("");
+}
+
+function splitNumber(num) {
+  const digits = num.split("");
+  const bbfs = num;
+  const ai = digits.slice(1, 5).join("");
+  const cb = digits[0] + "/" + digits[5];
+  const twin = digits[3] + digits[3] + " - " + digits[1] + digits[1];
+  const top2dBB = digits[0] + digits[5] + " - " + digits[2] + digits[4] + " - " + digits[4] + digits[1];
+  return { bbfs, ai, cb, twin, top2dBB };
+}
+
+function displayDailyNumbers() {
+  const seed = getSeed();
+  const rand = seededRandom(seed);
+  const container = document.getElementById("dailyNumbers");
+
+  ids.forEach(name => {
+    const num = generateUniqueNumber(rand);
+    const { bbfs, ai, cb, twin, top2dBB } = splitNumber(num);
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      `<div class="card-title">${name}</div>
+       <div class="card-text"><strong>BBFS:</strong> ${bbfs}</div>
+       <div class="card-text"><strong>AI:</strong> ${ai}</div>
+       <div class="card-text"><strong>CB:</strong> ${cb}</div>
+       <div class="card-text"><strong>Twin:</strong> ${twin}</div>
+       <div class="card-text"><strong>Top 2D BB:</strong> ${top2dBB}</div>
+       <a href="https://www.daungo.space/">
+         <button type="button" class="btn btn-outline-danger">PASANG SEKARANG</button>
+       </a>
+       <div class="footer">PREDIKSI TIDAK 100% AKURAT, UTAMAKAN PREDIKSI SENDIRI 🔥</div>`;
+    container.appendChild(card);
+  });
+}
+
+displayDailyNumbers();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const must = "6KYmXrA";
+  const html = document.documentElement.innerHTML;
+  if (!html.includes(must)) {
+    window.location.href = "https://www.theongersmovie.space";
+  }
+});
