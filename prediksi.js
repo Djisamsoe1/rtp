@@ -87,10 +87,3 @@ function displayDailyNumbers() {
 
 displayDailyNumbers();
 
-document.addEventListener("DOMContentLoaded", function () {
-  const must = "6KYmXrA";
-  const html = document.documentElement.innerHTML;
-  if (!html.includes(must)) {
-    window.location.href = "https://www.theongersmovie.space";
-  }
-});
