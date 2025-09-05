@@ -1,5 +1,4 @@
-<!-- Pastikan jQuery sudah ada -->
-<script>
+
 // ======= KONFIGURASI =======
 const PATTERNS_POOL = [
   ',Turbo On,',
@@ -102,4 +101,4 @@ $(document).ready(function () {
   updatePatterns();
   updateProgressBars();
 });
-</script>
+
